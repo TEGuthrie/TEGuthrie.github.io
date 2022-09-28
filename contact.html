@@ -30,6 +30,20 @@
       </nav>
 </head>
 <body>
-    
+    <form>
+      <div class="mb-3">
+        <label for="emailInput" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="emailInput">
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="contactReason" id="contactReason1">
+        <label class="form-check-label" for="contactReason1">Business</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="contactReason" id="contactReason2">
+        <label class="form-check-label" for="contactReason2">Some other reason</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </body>
 </html>
