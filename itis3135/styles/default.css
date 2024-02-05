@@ -37,3 +37,9 @@ p.center{
 figure{
     
 }
+span.divider_head{
+    font-size: 15pt;
+}
+span.divider_nav{
+    font-size: 10pt;
+}
