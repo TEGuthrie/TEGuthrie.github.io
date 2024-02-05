@@ -1,7 +1,7 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #434371;
-    color: teal;
+    color: aquamarine;
 }
 a{
     color: #ed254e;
@@ -39,7 +39,9 @@ figure{
 }
 span.divider_head{
     font-size: 15pt;
+    color: teal;
 }
 span.divider_nav{
     font-size: 10pt;
+    color: teal;
 }
