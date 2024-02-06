@@ -1,5 +1,6 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15pt;
     background-color: #434371;
     color: aquamarine;
 }
@@ -14,6 +15,9 @@ a:hover{
 header{
     text-align: center;
 }
+footer{
+    text-align: center;
+}
 h2{
     text-align: center;
 }
@@ -21,12 +25,8 @@ main{
 margin-left: 25%;
 margin-right: 25%;
 }
-footer{
-    text-align: center;
-}
 div.center{
-    margin:auto;
-    width: 50%;
+    text-align: center;
 }
 p.center{
     text-align: center;
@@ -35,7 +35,8 @@ p.center{
     font-style: italic;
 }
 figure{
-    
+    font-style: italic;
+    text-align: center;
 }
 span.divider_head{
     font-size: 15pt;
@@ -44,4 +45,25 @@ span.divider_head{
 span.divider_nav{
     font-size: 10pt;
     color: teal;
+}
+span.bullet{
+            /*A00000*/
+    color: #AE0A0A;
+    font-weight: bold;
+}
+ul{
+    display: inline-block;
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 10%;
+}
+iframe{
+    width: 100%;
+}
+body.head_foot{
+    text-align: center;
+    border-width: 0px;
+    border: none;
+    padding: 0px;
+    margin: 0px;
 }
