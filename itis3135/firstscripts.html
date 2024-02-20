@@ -3,14 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Thomas Guthrie's Titanic Gopher 𒅄 ITIS 3135 𒅄 First Scripts</title>
+    <link rel = "stylesheet" href = "styles/default.css">
+    <script src="scripts/scripts.js"></script>
 </head>
 <body>
     <div data-include="components/header.html"></div>
-    <main>
-        
+    <main class="center_main">
+        <h2>First Scripts</h2>
+        <h3 id="date-time"></h3>
+        <script>document.getElementById("date-time").innerHTML = "Date: " + Date();</script>
+        <div class="center">
+            <p>What is your name?</p>
+            <input id="name" placeholder="Name goes here">
+            <p>How are you feeling right now?</p>
+            <input id="feeling" placeholder="Excelent">
+            <button type="button" onclick="greetings()">Enter</button>
+            <p id="greeting"></p>
+        </div>
+        <br>
+        <div class="center">
+            <p>Please enter a nubmer between 1 and 10.</p>
+            <input id="number" placeholder="1-10">
+            <button type="button" onclick="gonFunc()">Enter</button>
+        </div>
+        <div class="center_container">
+            <p>Enter a number to get your size.</p>
+            <input id="sizeNum" placeholder="1-9">
+            <button type="button" onclick="size()">Enter</button>
+            <p id="sizeText"></p>
+        </div>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/HTMLInclude.js"></script>
+
 </body>
 </html>
