@@ -1,5 +1,6 @@
+
 html, body{
-    all:initial;
+    all: initial;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15pt;
     background-color: #434371;
@@ -27,7 +28,15 @@ footer{
 h2{
     text-align: center;
 }
+main, .main_container{
+/*margin-left: 25%;
+margin-right: 25%;*/
+width: 95%;
+margin: 0 auto;
+max-width: 1400px;
+}
 div.center{
+    margin: 0 auto;
     text-align: center;
 }
 p.center{
@@ -59,13 +68,60 @@ ul{
     margin-left: 20%;
     margin-right: 10%;
 }
-iframe{
-    width: 100%;
-}
 body.head_foot{
     text-align: center;
     border-width: 0px;
     border: none;
     padding: 0px;
     margin: 0px;
+}
+.center_container{
+    text-align: center;
+    border-width: 5px;
+    border: solid;
+    border-color: #F7CB15;
+    margin: 10px auto;
+    width: 50%;
+}
+main.center_main{
+    text-align: center;
+}
+img.intro
+{
+    width: 30%;
+    border: solid;
+    border-color: #F7CB15;
+    border-radius: 40px;
+}
+/* MOBILE RULES */
+/* Remove Initial */
+/* Foundational Three */
+/* Rule Overrides For Laptops / Small Screens */
+@media screen and (min-width: 1081) and (max-width: 1400px){
+    img.intro{
+        width: 30%;
+    }
+}
+@media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
+    img.intro{
+        width: 37.5%;
+    }
+}
+/* Rule Overrides For Tablet Devices */
+@media screen and ( min-width: 601px ) and ( max-width: 980px )  {
+    img.intro{
+        width: 40%;
+    }
+}
+/* Rule Overrides For Mobile Devices */
+@media screen and ( min-width: 370px ) and ( max-width: 600px ) {
+    img.intro{
+        width: 75%;
+    }
+    ul{
+        margin-left: 10%;
+    }
+    html, body{
+        font-size: 12pt;
+    }
 }
