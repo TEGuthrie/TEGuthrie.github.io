@@ -1,8 +1,14 @@
-body{
+html, body{
+    all:initial;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15pt;
     background-color: #434371;
     color: aquamarine;
+}
+main, .maincontainer{
+    
+    margin-left: 25%;
+    margin-right: 25%;
 }
 a{
     color: #ed254e;
@@ -20,10 +26,6 @@ footer{
 }
 h2{
     text-align: center;
-}
-main{
-margin-left: 25%;
-margin-right: 25%;
 }
 div.center{
     text-align: center;
