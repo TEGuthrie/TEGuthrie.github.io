@@ -5,12 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator Try</title>
     <link rel="stylesheet" href="styles/default.css">
+    <script src="scripts/calculator.js"></script>
 </head>
 <body>
     <div data-include="components/header.html"></div>
     <main>
         <h2>Calculator</h2>
+        <div class="grid-container-calc">
+            <label id="prev-input"></label>
+            <input class="calc-input" id="numbers">
+            <button class="calc-eqal" type="button" onclick="">=</button>
 
+            <button class="calc-1" type="button" onclick="appendNum(1)">1</button>
+            <button class="calc-2" type="button" onclick="appendNum(2)">2</button>
+            <button class="calc-3" type="button" onclick="appendNum(3)">3</button>
+            <button class="calc-plus" type="button" onclick="">+</button>
+
+            <button class="calc-4" type="button" onclick="appendNum(4)">4</button>
+            <button class="calc-5" type="button" onclick="appendNum(5)">5</button>
+            <button class="calc-6" type="button" onclick="appendNum(6)">6</button>
+            <button class="calc--" type="button" onclick="">-</button>
+
+            <button class="calc-7" type="button" onclick="appendNum(7)">7</button>
+            <button class="calc-8" type="button" onclick="appendNum(8)">8</button>
+            <button class="calc-9" type="button" onclick="appendNum(9)">9</button>
+            <button class="calc-x" type="button" onclick="">*</button>
+
+            <button class="calc-0" type="button" onclick="appendNum(0)">0</button>
+            <button class="calc-div" type="button" onclick="">&divide;</button>
+        </div>
+        
     </main>
     <div data-include="components/footer.html"></div>
 </body>
