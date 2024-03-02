@@ -199,12 +199,18 @@ button.calc{
         grid-row: 2;
     }
     &.b-clear{
-        grid-column: 4;
-        grid-row: 1;
+        grid-column: 1/ span 4;
+        grid-row: 7;
+        width: auto;
+        padding-top: 1%;
+        padding-bottom: 1%;
     }
 }
-button.calc:active{
+button.calc:hover{
     background-color: var(--red-hover);
+}
+button.calc:active{
+    background-color: maroon;
 }
 /* MOBILE RULES */
 /* Remove Initial */

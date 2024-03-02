@@ -93,8 +93,8 @@ function displayValues(sign){
 }
 /*Will reset the values stored in variables if you input a number after a calculation*/
 function resetValues(){
-    label.innerHTML = solution;
-    num1 = num2 = solution = operator = null;
+    input.value = label.innerHTML = "";
+    num1 = num2 = solution = operator = func = null;
     numSelect = 1;
 }
 
