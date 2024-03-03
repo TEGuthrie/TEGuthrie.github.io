@@ -86,6 +86,10 @@ function calc(caller){
         }
         console.log(("Solution: " + solution));
         displayValues(sign);
+        if(caller == "equal button")
+        {
+            numSelect = 1;
+        }
     }
 }
 function displayValues(sign){
