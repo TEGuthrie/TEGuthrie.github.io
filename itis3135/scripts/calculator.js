@@ -7,7 +7,7 @@ var operator = null;
 var input = getElement("numbers");
 var label = getElement("prev-input");
 function appendNum(value){
-    if(solution != null)
+    if(input.value == solution)
     {
         resetValues();
     }
@@ -18,10 +18,11 @@ function appendNum(value){
 function operatorSelect(operator){
     if(operator == 2 && input.value == "")
     {
-        input().value += "-";
+        input.value += "-";
     }
     else if(numSelect == 1){
         num1 = parseInt(input.value);
+        console.log("num1: " + num1);
         label.innerHTML = input.value;
         self.operator = operator
         input.value = '';
@@ -29,14 +30,16 @@ function operatorSelect(operator){
     }
     else{
         /*
-        Do another calculation with solution value of last
-        curently broken.
+        Do another calculation with last solution
         */
+        calc("operatorSelect");
+        console.log("Doing another operation")
         num1 = solution;
+        num2 = null;
         label.innerHTML = num1;
         numSelect = 1;
-        calc("operatorSelect");
-        operatorSelect(operator);
+        self.operator = operator;
+        input.value = '';
     }
 }
 function calc(caller){
@@ -56,6 +59,7 @@ function calc(caller){
     {
         /*Change this so it is in the calculator text later. Maybe*/
         alert("Cannot divide by 0");
+        resetValues();
     }
     else
     {
@@ -65,45 +69,42 @@ function calc(caller){
             case 1:
                 solution = num1 + num2;
                 sign = " + "
-                console.log(solution);
                 break;
             case 2:
                 solution = num1 - num2;
                 sign = " - ";
-                console.log(solution);
                 break;
             case 3:
                 solution = num1 * num2;
                 sign = " &times; ";
-                console.log(solution);
                 break;
             case 4:
                 solution = num1 / num2;
                 sign = " &divide; ";
-                console.log(solution);
                 break;
             /*Add more cases for any additional calculations*/
         }
+        console.log(("Solution: " + solution));
         displayValues(sign);
     }
 }
 function displayValues(sign){
     label.innerHTML = func = (num1+sign+num2);
+    console.log("Function: " + func);
     input.value = solution;
 }
 /*Will reset the values stored in variables if you input a number after a calculation*/
 function resetValues(){
-    input.value = label.innerHTML = "";
+    input.value = "";
+    label.innerHTML = solution;
     num1 = num2 = solution = operator = func = null;
     numSelect = 1;
 }
 
 function usePrevValue()
 {
-    /*
-    To Do
-    Add functionality so user can click label to use previous solution as input value after clearing
-    */
+    input.value = label.innerHTML;
+    label.innerHTML = "";
 }
 
 /*Used for setting input & lable variable so I don't have to have to have getElementById everywhere I need a reference*/
