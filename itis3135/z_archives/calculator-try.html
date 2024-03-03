@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Try</title>
+    <link rel="stylesheet" href="styles/default.css">
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+    <main>
+        <h2>Calculator</h2>
+        <p class="center" style="color: teal;">My custom calculator, did not use tutorial</p>
+        <div class="grid-container-calc">
+            <label class="calc" id="prev-input" onclick="usePrevValue()">&nbsp;</label>
+            
+            
+            <input class="calc" id="numbers">
+            <button class="calc b-equal" type="button" onclick="calc('equal button')">=</button>
+            
+            <button class="calc b-1" type="button" onclick="appendNum(1)">1</button>
+            <button class="calc b-2" type="button" onclick="appendNum(2)">2</button>
+            <button class="calc b-3" type="button" onclick="appendNum(3)">3</button>
+            <button class="calc b-plus" type="button" onclick="operatorSelect(1)">+</button>
+            
+            <button class="calc b-4" type="button" onclick="appendNum(4)">4</button>
+            <button class="calc b-5" type="button" onclick="appendNum(5)">5</button>
+            <button class="calc b-6" type="button" onclick="appendNum(6)">6</button>
+            <button class="calc b-minus" type="button" onclick="operatorSelect(2)">-</button>
+            
+            <button class="calc b-7" type="button" onclick="appendNum(7)">7</button>
+            <button class="calc b-8" type="button" onclick="appendNum(8)">8</button>
+            <button class="calc b-9" type="button" onclick="appendNum(9)">9</button>
+            <button class="calc b-mult" type="button" onclick="operatorSelect(3)">&times;</button>
+            
+            <button class="calc b-0" type="button" onclick="appendNum(0)">0</button>
+            <button class="calc b-div" type="button" onclick="operatorSelect(4)">&divide;</button>
+
+            <button class="calc b-clear" type="button" onclick="resetValues()">Reset</button>
+        </div>
+        
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/calculator.js"></script>
+    <script src="scripts/HTMLInclude.js"></script>
+</body>
+</html>

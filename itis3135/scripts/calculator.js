@@ -6,6 +6,24 @@ var numSelect = 1;
 var operator = null;
 var input = getElement("numbers");
 var label = getElement("prev-input");
+window.onload = function(){
+    document.getElementById("0").addEventListener('click', function(){appendNum(0);});
+    document.getElementById("1").addEventListener('click',function(){appendNum(1);});
+    document.getElementById("2").addEventListener('click', function(){appendNum(2);});
+    document.getElementById("3").addEventListener('click', function(){appendNum(3);});
+    document.getElementById("4").addEventListener('click', function(){appendNum(4);});
+    document.getElementById("5").addEventListener('click', function(){appendNum(5);});
+    document.getElementById("6").addEventListener('click', function(){appendNum(6);});
+    document.getElementById("7").addEventListener('click', function(){appendNum(7);});
+    document.getElementById("8").addEventListener('click', function(){appendNum(8);});
+    document.getElementById("9").addEventListener('click', function(){appendNum(9);});
+    document.getElementById("add").addEventListener('click', function(){operatorSelect(1);});
+    document.getElementById("sub").addEventListener('click', function(){operatorSelect(2);});
+    document.getElementById("times").addEventListener('click', function(){operatorSelect(3);});
+    document.getElementById("divide").addEventListener('click', function(){operatorSelect(4);});
+    document.getElementById("reset").addEventListener('click', function(){resetValues();});
+    document.getElementById("equal").addEventListener('click', function(){calc("equal");});
+}
 function appendNum(value){
     if(input.value == solution)
     {
@@ -16,6 +34,7 @@ function appendNum(value){
     input.value = num;
 }
 function operatorSelect(operator){
+    console.log("event listener worked for operators");
     if(operator == 2 && input.value == "")
     {
         input.value += "-";
@@ -118,5 +137,11 @@ function usePrevValue()
 
 /*Used for setting input & lable variable so I don't have to have to have getElementById everywhere I need a reference*/
 function getElement(id){
+    if(id == "numbers"){
+        console.log(document.getElementById(id).value);
+    }
+    else{
+        console.log(document.getElementById(id).innerHTML);
+    }
     return document.getElementById(id);
 }
