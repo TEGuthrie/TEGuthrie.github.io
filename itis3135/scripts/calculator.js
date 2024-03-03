@@ -100,7 +100,12 @@ function displayValues(sign){
 /*Will reset the values stored in variables if you input a number after a calculation*/
 function resetValues(){
     input.value = "";
-    label.innerHTML = solution;
+    if(solution == null){
+        label.innerHTML = "&nbsp;";
+    }
+    else{
+        label.innerHTML = solution;
+    }
     num1 = num2 = solution = operator = func = null;
     numSelect = 1;
 }
@@ -108,7 +113,7 @@ function resetValues(){
 function usePrevValue()
 {
     input.value = label.innerHTML;
-    label.innerHTML = "";
+    label.innerHTML = "&nbsp;";
 }
 
 /*Used for setting input & lable variable so I don't have to have to have getElementById everywhere I need a reference*/
