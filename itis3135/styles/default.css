@@ -8,6 +8,16 @@
     inherits: false;
     initial-value: #A70425;
 }
+@property --crayola-light{
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f15574;
+}
+@property --pistachio{
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #65892F;
+}
 
 html, body{
     all: initial;
@@ -65,7 +75,7 @@ div.center{
     margin: 0 auto;
     text-align: center;
 }
-.center{
+p.center{
     text-align: center;
 }
 .italic-text{
@@ -85,7 +95,7 @@ span.divider_nav{
 }
 span.bullet{
             /*A00000*/
-    color: var(--crayola-red);
+    color: var(--pistachio);
     font-weight: bold;
 }
 span.email{
