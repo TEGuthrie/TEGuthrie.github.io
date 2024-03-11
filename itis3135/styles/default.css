@@ -126,7 +126,7 @@ td.num{
 table.complex 
 ul{
     display: inline-block;
-    text-align: left;
+    text-align: justify;
     margin-left: 20%;
     margin-right: 10%;
 }
