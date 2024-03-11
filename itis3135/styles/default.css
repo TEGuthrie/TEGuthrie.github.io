@@ -95,7 +95,7 @@ span.divider_nav{
 }
 span.bullet{
             /*A00000*/
-    color: var(--pistachio);
+    color: var(--crayola-red);
     font-weight: bold;
 }
 span.email{
