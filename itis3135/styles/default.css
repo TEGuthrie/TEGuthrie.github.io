@@ -85,7 +85,7 @@ span.divider_nav{
 }
 span.bullet{
             /*A00000*/
-    color: #AE0A0A;
+    color: var(--crayola-red);
     font-weight: bold;
 }
 span.email{
@@ -113,6 +113,7 @@ table.simple{
 td.num{
     text-align: center;
 }
+table.complex 
 ul{
     display: inline-block;
     text-align: left;
