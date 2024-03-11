@@ -21,13 +21,23 @@ window.onload = function(){
     document.getElementById("divide").onclick = function(){buttonHandler(13)};
     document.getElementById("equal").onclick = function(){buttonHandler(14)};
     document.getElementById("reset").onclick = function(){buttonHandler(15)};
-    label.
+    label.addEventListener("click", function(){});
 }
 /*Return element from document so I can use variables for dom objects*/
 function getElement(id){
     return document.getElementById(id);
 }
 function buttonHandler(button){
+    /*
+    0-9 numbers
+    10: add
+    11: subtract
+    12: multiply
+    13: divide
+    14: equal
+    15: reset
+    16: label
+    */
     switch (button){
         case 0:
             appendNum("0");
@@ -63,10 +73,16 @@ function buttonHandler(button){
             if (operator != null){
                 calculate();
             }
+            else{
+                operator(1);
+            }
             break;
         case 11:
             if (input.value == ""){
                 appendNum("-")
+            }
+            else{
+                operator(2);
             }
     }
 }
@@ -75,4 +91,15 @@ function appendNum(value){
         resetValues();
     }
     input.value += value;
+}
+function operatorSelect(op){
+    if(num1 == null){
+        operator = op;
+        if(input.value == ""){
+            num1  = 0;
+        }
+        else{
+            num1 = input.value
+        }
+    }
 }

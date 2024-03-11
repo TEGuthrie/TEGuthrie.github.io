@@ -38,6 +38,9 @@ footer{
 h2{
     text-align: center;
 }
+h3{
+    color: teal;
+}
 main, .main_container{
 /*margin-left: 25%;
 margin-right: 25%;*/
@@ -62,7 +65,7 @@ div.center{
     margin: 0 auto;
     text-align: center;
 }
-p.center{
+.center{
     text-align: center;
 }
 .italic-text{
@@ -84,6 +87,31 @@ span.bullet{
             /*A00000*/
     color: #AE0A0A;
     font-weight: bold;
+}
+span.email{
+    font-style: italic;
+    color: var(--crayola-red);
+}
+ol.tabular{
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: justify;
+}
+
+table tr, td, th{
+    border: solid;
+    border-width: 1px;
+    border-color: teal;
+    border-collapse: collapse;
+    text-align: justify;
+    
+}
+table.simple{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+td.num{
+    text-align: center;
 }
 ul{
     display: inline-block;
