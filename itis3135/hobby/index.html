@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<style>
+    html, body{
+        all: initial;
+        font-family: 'MuseoModerno',Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 18pt;
+        width: 95%;
+        margin: 0 auto;
+        max-width: 1400px;
+        background-color: #C08497;
+        color: #273469;
+    }
+    main{
+        
+    }
+    header{
+        border-bottom: solid #6c3748 2px;
+    }
+    footer{
+        margin-left: 12.5%;
+        margin-right: 12.5%;
+    }
+    h1{
+        font-size: 50pt;
+        text-align: center;
+        -webkit-text-stroke: #06070f;
+        -webkit-text-stroke-width: 2px;
+        text-shadow: 1px 1px 3px #3d51a4, 3px 3px 5px #5299D3;
+    }
+    a{
+        color: #03474F;
+    }
+    a:hover{
+        color: #046B76;
+    }
+    h2{
+        font-family: 'Shantell Sans', Verdana, Geneva, Tahoma, sans-serif;
+        -webkit-text-stroke:2px #06070f;
+    }
+    h3{
+        font-family: 'Shantell Sans', Verdana, Geneva, Tahoma, sans-serif;
+    }
+    button{
+        font-family: 'Shantell Sans', Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        background-color: #F7AF9D;
+        color: #561011;
+        border-radius: 20px;
+        border-color: #273469;
+        border-width: 3px;
+        width: 190px;
+        height: 30px;
+        margin: 1%;
+    }
+    button:active{
+        background-color: #d03711;
+    }
+    .centerText{
+        text-align: center;
+    }
+    .content{
+        display: block;
+        margin: auto;
+    }
+    .select{
+        font-size: 15pt;
+        width: 210px;
+        height: auto;
+        border-radius: 10px;
+    }
+    .ext{
+        transform: translateY(-12px);
+    }
+    table, td, th{
+        border: solid 2px;
+        border-color: #9B1D20;
+        border-collapse: collapse;
+    }
+    td{
+        padding-left: auto;
+        padding-right: auto;
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>AI Image Generation</h1>
+        <div class="centerText">
+            <button type="button" id="getting-started" class="select" onclick="viewChange(0)">Getting Started</button>
+            <button type="button" id="do-it-yourself" class="select" onclick="viewChange(1)">Do It Yourself</button>
+            <button type="button" id="advanced-tools" class="select" onclick="viewChange(2)">Advanced tools</button>
+            <button type="button" id="part4" class="select ext" onclick="viewChange(3)">Automatic1111 Extensions</button>
+            <button type="button" id="examples" class="select" onclick="viewChange(4)">Examples</button>
+        </div>
+    </header>
+    <main class="content" id="start">
+        <h2>Getting Started with AI Image Generation</h2>
+        <p>Lately I have been enjoying messing around with AI image generation. It is pretty easy to get started using AI image generators with the likes of Open AI's Dalle and Stability AI's Stable Diffusion. Some of those options are as follows:</p>
+        <table>
+            <tr>
+                <th>Service</th>
+                <th>Provider</th>
+                <th>Model</th>
+                <th>pricing</th>
+            </tr>
+            <tr>
+                <td><a href="https://chat.openai.com/">DALL-E 3</a></td>
+                <td>Open AI</td>
+                <td>Dalle 3</td>
+                <td>$20/month</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.bing.com/images/create">Copilot Designer</a></td>
+                <td>Microsoft</td>
+                <td>DALL-E 3</td>
+                <td>Free</td>
+            </tr>
+        </table>
+        
+    </main>
+    <main class="content" id="diy" style="display: none;">
+        <h2>Running image generation yourself locally</h2>
+        <p>If you want to generate images without using an online provider you can. While it isn't as simple as using an online service it is still quite doable.</p>
+        <p>There are several different tools to use for generating your own images locally through webuis. The most popular is <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion Web UI</a> by Automatic1111 which has a simpler to use UI that is extensible.</p>
+        <figure>
+            <img src="images/automatic1111_example.png" alt="Example of Automatic1111 Stable Diffusion Web UI">
+            <figcaption>Automatic1111 Web UI example</figcaption>
+        </figure>
+        <p>For a more complex and customizable webui there is <a href="https://github.com/comfyanonymous/ComfyUI">Comfy UI</a> which is a node based image generation ui that allows complex workflows to be easily visualized</p>
+        <figure>
+            <img src="images/comfyui_screenshot.png">
+            <figcaption>Comfy UI example</figcaption>
+        </figure>
+        <p>Both of these options allow you to either install with portable install files, or cloning their git repos, and are built with python. I believe both come with the basic stable diffusion model prepackaged, but if not just download it and stick them in the model folder specified by your pick and get started.</p>
+    </main>
+    <main class="content" id="advanced" style="display: none;">
+        <h2>Advanced Uses</h2>
+        <p>After you get your prefered stable diffusion Web UI set up there are tons of options you can tweak, and additional models and tools you can use to enhance your generated images.</p>
+        <h3>Different models</h3>
+        <p>If you feel like the basic Stable Diffusion, or the XL version aren't enough websites like <a href="https://civitai.com/">CivitAI</a> provide user trained models that are trained on images in different styles, pick and choose finding models that are to your liking.</p>
+        <h3>Textual Inversion</h3>
+        <p>Textual inversions are prepackaged terms aka tokens that can be used to get more specific details out of a generic prompt. You can find these on CivitAI as well. Most of the textual inversions I use come from <a href="https://civitai.com/models/148131/ultimate-text-embeddings-sdxl-pack-styles-negative">this</a> pack.</p>
+        <h3>LoRA & LyCORIS</h3>
+        <p>LoRA and LyCORIS are similar to textual inversion in that they are meant to tweak the final output of a models generated image, but different in how they operate. These are small models trained off of images in a specific style and can be triggered off of specific words in a prompt. These models can also be specifically activated, if you don't want to use their keywords in a prompt. Weights can also be applied to LoRA and LyCORIS models if you want the effects to be stronger or weaker in a final image.</p>
+    </main>
+    <main class="content" id="part4" style="display: none;">
+        <h2>Automatic1111 Extensions</h2>
+        <p>The Web UI that I primarily use is Automatic1111, many users have made extensions that can be added to extend functionality. Below I'll talk about some of the different extensions that I use.</p>
+        <p>Some of my most used extensions are for prompting, specifically tag complete and dynamic prompts. Tag complete allows you to auto complete terms and change them out with tags from danbooru, a training datasets caption agregator, that allows for more consistent image generation. Dynamic prompts is a more extensive tool than the built in scripts allowing for more randomized generations or iterations over various terms from lists called wildcards. The specific dynamic prompt extension can also use chatgpt like large language models to improve uppon your own prompt to generate more interesting or detailed images</p>
+    </main>
+    <main class="content" id="ex" style="display: none;">
+        <h2>Example Images</h2>
+    </main>
+    <footer>
+        <p style="text-align: center;">Designed by <a href = "WebGopher.com">Web Gopher Co.</a> &copy;2024</p>
+        <div class="centerText">
+            <a href="https://validator.w3.org/check?uri=referer" id="validation_link_html"><button type="button" class="validator">HTML Validation</button></a>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation_link_css"><button type="button" class="validator">CSS Validation</button></a>
+            <a href "https://wave.webaim.org/report#/check?uri=referer" id="validation_accessibility"><button type="button" class="validator">Accessibility Validation</button></a>
+        </div>
+    </footer>
+    <script>
+        window.onload = function(){
+            let x = document.getElementById("getting-started");x.style.backgroundColor = "#d03711"; x.style.color="#ffffff";
+        };
+            function viewChange(active){
+            let nodes = document.querySelectorAll("main");
+            let buttons = document.querySelectorAll(".select");
+            for(let i = 0; i < 5; i++){
+                if(i == active){
+                    nodes[i].style.display = "block";
+                    buttons[i].style.backgroundColor = "#d03711";
+                    buttons[i].style.color = "#ffffff"
+                }
+                else{
+                    nodes[i].style.display = "none";
+                    buttons[i].style.backgroundColor = "#F7AF9D";
+                    buttons[i].style.color = "#561011"
+                }
+                }
+            }
+    </script>
+    <script>
+        document.getElementById("validation_link_html").setAttribute("href","https://validator.w3.org/check?uri=" + location.href);
+                document.getElementById("validation_link_css").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+                document.getElementById("validation_accessibility").setAttribute("href", "https://wave.webaim.org/report#/" + location.href);
+    </script>
+</body>
+<main id="">
+
+</main>
+</html>
