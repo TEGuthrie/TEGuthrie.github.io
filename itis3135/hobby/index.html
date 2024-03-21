@@ -66,7 +66,7 @@
         text-align: center;
     }
     .content{
-        display: block;
+        display: none;
         margin: auto;
         width: 100%;
     }
@@ -96,18 +96,22 @@
         border-collapse: collapse;
     }
     th.gallery{
-        width: 512px;
+        width: 1024px;
     }
     td.gallery{
-        width: 512px;
-        height: 512px;
+        width: 20cm;
+        
     }
     img.gallery{
         width: 100%;
         height: auto;
         margin: auto;
     }
-
+    @media screen and (min-width: 370px) and (max-width: 720px){
+        .ext{
+            transform: translateY(0px);
+        }
+    }
 </style>
 </head>
 <body>
@@ -120,6 +124,7 @@
             <button type="button" id="auto1111-extensions" class="select ext" onclick="viewChange(3)">Automatic1111 Extensions</button>
             <button type="button" id="examples" class="select" onclick="viewChange(4)">Examples</button>
         </div>
+        <a></a>
     </header>
     <main>
         <div class="content" id="start">
@@ -181,18 +186,15 @@
             <h2>Example Images</h2>
             <p>These are some examples of different models with several LoRA models applied to them.</p>
             <p><span class="emphasis">Prompt:</span> Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet</p>
-            <figure>
-                <img src="" alt="">
-            </figure>
             <table class="gallery">
                 <tr>
                     <th class="gallery">Model/LoRA</th>
-                    <th class="gallery">Aether Punk</th>
-                    <th class="gallery">Magic</th>
-                    <th class="gallery">Mechanicus</th>
-                    <th class="gallery">Wizard Core</th>
-                    <th class="gallery">Water color</th>
-                    <th class="gallery">Ink Drawing</th>
+                    <th class="gallery"><a href="https://civitai.com/models/129888?modelVersionId=181609">Aether Punk</a></th>
+                    <th class="gallery"><a href="https://civitai.com/models/137962?modelVersionId=152369">Magic</a></th>
+                    <th class="gallery"><a href="https://civitai.com/models/178968?modelVersionId=200893">Mechanicus</a></th>
+                    <th class="gallery"><a href="https://civitai.com/models/168414?modelVersionId=189385">Wizard Core</a></th>
+                    <th class="gallery"><a href="https://civitai.com/models/126848/watercolor-xl">Water color</a></th>
+                    <th class="gallery"><a href="https://civitai.com/models/156143/sdxl-inkdrawing-directors-cut">Ink Drawing</a></th>
                 </tr>
                 <tr>
                     <td class="gallery"><a href="https://civitai.com/models/183863/bmegamixl">BMegaMiXL</a></td>
@@ -244,22 +246,24 @@
         </div>
 </main>
     <footer>
-        <p style="text-align: center;">Designed by <a href = "WebGopher.com">Web Gopher Co.</a> &copy;2024</p>
+        <p style="text-align: center;">Designed by <a href = "../WebGopher.com">Web Gopher Co.</a> &copy;2024</p>
+        <p class="centerText" style="font-size:medium;">No code on this page was generated with AI</p>
         <div class="centerText">
-            <a href="https://validator.w3.org/check?uri=referer" id="validation_link_html"><button type="button" class="validator">HTML Validation</button></a>
-            <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation_link_css"><button type="button" class="validator">CSS Validation</button></a>
-            <a href "https://wave.webaim.org/report#/check?uri=referer" id="validation_accessibility"><button type="button" class="validator">Accessibility Validation</button></a>
+            <button type="button" class="validator" onclick="validationLink(0)">HTML Validation</button>
+            <button type="button" class="validator" onclick="validationLink(1)">CSS Validation</button>
+            <button type="button" class="validator" onclick="validationLink(2)">Accessibility Validation</button>
+            <button type="button" class="validator" onclick="viewChange(5)">Page Test</button>
         </div>
     </footer>
     <script>
         window.onload = function(){
-            viewChange(4);
+            viewChange(0);
         };
             function viewChange(active){
             let nodes = document.querySelectorAll(".content");
             let buttons = document.querySelectorAll(".select");
             for(let i = 0; i < 5; i++){
-                if(i == active){
+                if(i == active || active == 5){
                     nodes[i].style.display = "block";
                     buttons[i].style.backgroundColor = "#d03711";
                     buttons[i].style.color = "#ffffff"
@@ -273,9 +277,23 @@
             }
     </script>
     <script>
-        document.getElementById("validation_link_html").setAttribute("href","https://validator.w3.org/check?uri=" + location.href);
+        function validationLink(val){
+            switch (val){
+                case 0:
+                    window.location.href = ("https://validator.w3.org/check?uri=" + location.href);
+                    break;
+                case 1:
+                    window.location.href = ("https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+                    break;
+                case 2:
+                    window.location.href = ("https://wave.webaim.org/report#/" + location.href);
+                    break;
+            }
+        }
+        /*document.getElementById("validation_link_html").setAttribute("href","https://validator.w3.org/check?uri=" + location.href);
                 document.getElementById("validation_link_css").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
                 document.getElementById("validation_accessibility").setAttribute("href", "https://wave.webaim.org/report#/" + location.href);
+                */
     </script>
 </body>
 </html>
