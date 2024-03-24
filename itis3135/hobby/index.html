@@ -6,26 +6,27 @@
     <title>AI Image Generation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <style>
     html, body{
         all: initial;
         font-family: 'MuseoModerno',Verdana, Geneva, Tahoma, sans-serif;
         font-size: 18pt;
-        width: 98%;
+        width: auto;
         margin: 0 auto;
-        max-width: 1440px;
         background-color: #C08497;
         color: #273469;
     }
     header{
         border-bottom: solid #6c3748 2px;
     }
+    main{
+        width: 90%;
+        margin: 10px auto auto auto;
+    }
     footer{
-        margin-left: 12.5%;
-        margin-right: 12.5%;
+        border-top: solid #6c3748 2px;
+        margin-top: 1.5%;
     }
     h1{
         font-size: 50pt;
@@ -90,6 +91,10 @@
         color: #1c254a;
         font-weight: bolder;
     }
+    span.negative{
+        color:#9B1D20;
+        font-weight: bolder;
+    }
     table.gallery, td.gallery, th.gallery{
         border: solid 2px;
         border-color: #c893a4;
@@ -107,9 +112,52 @@
         height: auto;
         margin: auto;
     }
+    img.extensions{
+        width: 100%;
+        height: auto;
+        margin: auto;
+        border-radius: 5px;
+        border: solid #561011 1px;
+    }
+    .extension_example{
+        max-width: 1000px;        
+    }
+    .row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .pcol{
+        flex: 10%;
+        padding: 5px;
+    }
+    .gcol{
+        flex: 50%;
+        padding: 5px;
+    }
+    figure{
+        margin: 0%;
+    }
+    br.segment{
+        border-bottom: solid #561011 2px;
+    }
     @media screen and (min-width: 370px) and (max-width: 720px){
         .ext{
             transform: translateY(0px);
+        }
+        .row{
+            flex-wrap: wrap;
+        }
+        .pcol{
+            flex: 100%;
+        }
+    }
+    @media screen and (min-width: 720px) and (max-width: 1000px){
+        .row{
+            flex-wrap: wrap;
+        }
+        .pcol{
+            flex: 40%;
         }
     }
 </style>
@@ -121,8 +169,9 @@
             <button type="button" id="getting-started" class="select" onclick="viewChange(0)">Getting Started</button>
             <button type="button" id="do-it-yourself" class="select" onclick="viewChange(1)">Do It Yourself</button>
             <button type="button" id="advanced-tools" class="select" onclick="viewChange(2)">Advanced tools</button>
-            <button type="button" id="auto1111-extensions" class="select ext" onclick="viewChange(3)">Automatic1111 Extensions</button>
-            <button type="button" id="examples" class="select" onclick="viewChange(4)">Examples</button>
+            <button type="button" id="prompt" class="select ext" onclick="viewChange(3)">Prompt Extensions</button>
+            <button type="button" id="generation-extensions" class="select ext" onclick="viewChange(4)">Generation Extensions</button>
+            <button type="button" id="examples" class="select" onclick="viewChange(5)">Examples</button>
         </div>
         <a></a>
     </header>
@@ -149,7 +198,28 @@
                     <td>DALL-E 3</td>
                     <td>Free</td>
                 </tr>
+                <tr>
+                    <td><a href="https://aitestkitchen.withgoogle.com/tools/image-fx">ImageFX</a></td>
+                    <td>Google</td>
+                    <td>Imagen 2</td>
+                    <td>Free</td>
+                </tr>
             </table>
+            <p><span class="emphasis">Prompt:</span> Man, wearing sci-fi power armor, brandishing a plasma sword, action shot</p>
+            <div class="row">
+                <div class="gcol">
+                    <figure>
+                        <img src="images/brave_9JswnvTYB1.jpg" alt="Screenshot of Microsoft's Copilot Designer after generating an image" class="extensions">
+                        <figcaption>Copilot Designer generating images based on the prompt</figcaption>
+                    </figure>
+                </div>
+                <div class="gcol">
+                    <figure>
+                        <img src="images/brave_tb74C6HZCg.jpg" alt="Screenshot of Google ImageFX after generating an image" class="extensions">
+                        <figcaption>ImageFX generating images based on the prompt</figcaption>
+                    </figure>
+                </div>
+            </div>
             
         </div>
         <div class="content" id="diy">
@@ -157,12 +227,12 @@
             <p>If you want to generate images without using an online provider you can. While it isn't as simple as using an online service it is still quite doable.</p>
             <p>There are several different tools to use for generating your own images locally through webuis. The most popular is <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion Web UI</a> by Automatic1111 which has a simpler to use UI that is extensible.</p>
             <figure>
-                <img src="images/automatic1111_example.png" alt="Example of Automatic1111 Stable Diffusion Web UI">
+                <img src="images/automatic1111_example.png" alt="Example of Automatic1111 Stable Diffusion Web UI" style="border: solid #561011 1px;border-radius: 5px;">
                 <figcaption>Automatic1111 Web UI example</figcaption>
             </figure>
             <p>For a more complex and customizable webui there is <a href="https://github.com/comfyanonymous/ComfyUI">Comfy UI</a> which is a node based image generation ui that allows complex workflows to be easily visualized</p>
             <figure>
-                <img src="images/comfyui_screenshot.png" alt="Example of Comfy UI web UI">
+                <img src="images/comfyui_screenshot.png" alt="Example of Comfy UI web UI" style="border: solid #561011 1px;border-radius: 5px;">
                 <figcaption>Comfy UI example</figcaption>
             </figure>
             <p>Both of these options allow you to either install with portable install files, or cloning their git repos, and are built with python. I believe both come with the basic stable diffusion model prepackaged, but if not just download it and stick them in the model folder specified by your pick and get started.</p>
@@ -172,15 +242,128 @@
             <p>After you get your prefered stable diffusion Web UI set up there are tons of options you can tweak, and additional models and tools you can use to enhance your generated images.</p>
             <h3>Different models</h3>
             <p>If you feel like the basic Stable Diffusion, or the XL version aren't enough websites like <a href="https://civitai.com/">CivitAI</a> provide user trained models that are trained on images in different styles, pick and choose finding models that are to your liking.</p>
+            <figure>
+                <img src="images/firefox_1O9Cwjpken.jpg" alt="Checkpoints tab in Automatic1111" class="extensions">
+                <figcaption>Checpoints tab in Automatic1111</figcaption>
+            </figure>
+            <p>If you find two checkpoints that you like and want to combine that is possible to do within the webui on the checkpoint merger tab.</p>
             <h3>Textual Inversion</h3>
             <p>Textual inversions are prepackaged terms aka tokens that can be used to get more specific details out of a generic prompt. You can find these on CivitAI as well. Most of the textual inversions I use come from <a href="https://civitai.com/models/148131/ultimate-text-embeddings-sdxl-pack-styles-negative">this</a> pack.</p>
             <h3>LoRA & LyCORIS</h3>
             <p>LoRA and LyCORIS are similar to textual inversion in that they are meant to tweak the final output of a models generated image, but different in how they operate. These are small models trained off of images in a specific style and can be triggered off of specific words in a prompt. These models can also be specifically activated, if you don't want to use their keywords in a prompt. Weights can also be applied to LoRA and LyCORIS models if you want the effects to be stronger or weaker in a final image.</p>
         </div>
-        <div class="content" id="extensions">
-            <h2>Automatic1111 Extensions</h2>
+        <div class="content" id="prompt_extensions">
+            <h2>Automatic1111 Prompt Extensions</h2>
             <p>The Web UI that I primarily use is Automatic1111, many users have made extensions that can be added to extend functionality. Below I'll talk about some of the different extensions that I use.</p>
             <p>Some of my most used extensions are for prompting, specifically tag complete and dynamic prompts. Tag complete allows you to auto complete terms and change them out with tags from danbooru, a training datasets caption agregator, that allows for more consistent image generation. Dynamic prompts is a more extensive tool than the built in scripts allowing for more randomized generations or iterations over various terms from lists called wildcards. The specific dynamic prompt extension can also use chatgpt like large language models to improve uppon your own prompt to generate more interesting or detailed images</p>
+            <figure>
+                <img class="extensions" src="images/firefox_IAtz2xxxA8.png" alt="Automatic1111 UI showing the use of Dynamic Prompts to generate images with text from a wildcard">
+                <figcaption>How to use Dynamic Prompts to generate images using wildcards</figcaption>
+            </figure>
+            <br class="segment">
+            <p><span class="emphasis">Prompt:</span> 1girl, tall , vibrant __1000+/wildcards/colours__ dress, light smile, round glasses, sprite, white  background</p>
+            <p><span class="negative">Negative Prompt:</span> &lt;lora:badhands:1.2&gt;</p>
+            <p>The section between underscores in the prompt is replaced with a line from the wildcard file that is specified.</p>
+            <div class="row">
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00004-1687177262.png" alt="An anime style girl with black hair that is underdyed yellow wearing glasses, wearing a black dress, who is smiling." style="width: 100%; height: auto;">
+                        <figcaption>Black</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00005-1687177262.png" alt="An anime style girl with blue hair wearing glasses, wearing a blue dress, who is smiling." class="extensions">
+                        <figcaption>Blue</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00006-1687177262.png" alt="An anime style girl with brown hair wearing glasses, wearing a brown dress, who is smiling." class="extensions">
+                        <figcaption>Brown</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00007-1687177262.png" alt="An anime style girl with black hair that is underdyed cyan wearing glasses, wearing a cyan dress, who is smiling." class="extensions">
+                        <figcaption>Cyan</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00008-1687177262.png" alt="An anime style girl with green hair wearing glasses, wearing a green dress, who is smiling." class="extensions">
+                        <figcaption>Green</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00009-1687177262.png" alt="An anime style girl with grey hair wearing glasses, wearing a brown dress, who is smiling." class="extensions">
+                        <figcaption>Grey</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00010-1687177262.png" alt="An anime style girl with blonde hair with orange tips, wearing glasses, wearing a orange dress, who is smiling." class="extensions">
+                        <figcaption>Orange</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="row">
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00011-1687177262.png" alt="An anime style girl with brown hair with pink tips, wearing glasses, wearing a pink dress, who is smiling." class="extensions">
+                        <figcaption>Pink</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00012-1687177262.png" alt="An anime style girl with purple hair wearing glasses, wearing a purple dress, who is smiling." class="extensions">
+                        <figcaption>Purple</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00013-1687177262.png" alt="An anime style girl with red hair wearing glasses, wearing a red dress, who is smiling." class="extensions">
+                        <figcaption>Red</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00014-1687177262.png" alt="An anime style girl with violet hair, wearing glasses, wearing a violet dress, who is smiling." class="extensions">
+                        <figcaption>Violet</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00015-1687177262.png" alt="An anime style girl with bleach blonde hair underdyed yellow, wearing glasses, wearing a white dress, who is smiling." class="extensions">
+                        <figcaption>White</figcaption>
+                    </figure>
+                </div>
+                <div class="pcol">
+                    <figure>
+                        <img src="images/generation_ext/00016-1687177262.png" alt="An anime style girl with blonde hair wearing glasses, wearing a yellow dress, who is smiling." class="extensions">
+                        <figcaption>Yellow</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="generation_extensions">
+            <h2>Automatic1111 Generation Extensions</h2>
+            <p>If I want to stylize my generated images and specifically make them look like pixel art I use the <a href="">sd-webui-pixelart</a> plugin</p>
+            <div class="row">
+                <div class="gcol">
+                    <figure>
+                        <img src="images/generation_ext/00027-3993681966.png" alt="An anime style girl with black hair underdyed teal, wearing a black dress, holding a glass with green drink and green straw" class="extensions">
+                        <figcaption><span class="emphasis">Prompt:</span> 1girl, tall , vibrant black dress, light smile, round glasses, sprite, white  background<br><span class="negative">Negative Prompt:</span> &lt;lora:badhands:1.2&gt; </figcaption>
+                    </figure>
+                </div>
+                <div class="gcol">
+                    <figure>
+                        <img src="images/generation_ext/pixel-0009-3993681966.png" alt="Dithered pixel art rendition of an anime style girl with black hair underdyed teal, wearing a black dress, holding a glass with green drink and green straw" class="extensions">
+                        <figcaption>Pixelated with a 4x downscale and using 32 colors for the pallete</figcaption>
+                    </figure>
+                </div>
+            </div>
         </div>
         <div class="content" id="ex">
             <h2>Example Images</h2>
@@ -198,46 +381,46 @@
                 </tr>
                 <tr>
                     <td class="gallery"><a href="https://civitai.com/models/183863/bmegamixl">BMegaMiXL</a></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0000.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Aether Punk LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0002.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Magic LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0003.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Mechanicus LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0005.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Wizard Core LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0008.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Water color LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0009.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Ink Drawing LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0000.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Aether Punk LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0002.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Magic LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0003.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Mechanicus LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0005.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Wizard Core LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0008.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Water color LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0009.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Ink Drawing LoRA"></td>
                 </tr>
                 <tr>
                     <td class="gallery"><a href="https://civitai.com/models/261336?modelVersionId=295158">Anima Pencil</a></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0010.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Aether Punk LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0012.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Magic LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0013.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Mechanicus LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0015.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Wizard Core LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0018.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Water color LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0019.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Ink Drawing LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0010.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Aether Punk LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0012.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Magic LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0013.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Mechanicus LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0015.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Wizard Core LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0018.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Water color LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0019.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Ink Drawing LoRA"></td>
                 </tr>
                 <tr>
                     <td class="gallery"><a href="https://civitai.com/models/119012?modelVersionId=293405">Blue Pencil</a></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0020.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Aether Punk LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0022.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Magic LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0023.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Mechanicus LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0025.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Wizard Core LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0028.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Water color LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0029.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Ink Drawing LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0020.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Aether Punk LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0022.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Magic LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0023.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Mechanicus LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0025.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Wizard Core LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0028.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Water color LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0029.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Ink Drawing LoRA"></td>
                 </tr>
                 <tr>
-                    <td class="gallery"><a href="https://civitai.com/models/101055/sd-xl">Stable Diffusion XL 1.0 vaefix</a></td><td class="gallery"><img class="gallery" src="images/generated/grid-0030.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Aether Punk LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0032.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Magic LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0033.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Mechanicus LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0035.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Wizard Core LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0038.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Water color LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0039.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Ink Drawing LoRA"></td>
+                    <td class="gallery"><a href="https://civitai.com/models/101055/sd-xl">Stable Diffusion XL 1.0 vaefix</a></td><td class="gallery"><img class="gallery" src="images/ship_ex/grid-0030.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Aether Punk LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0032.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Magic LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0033.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Mechanicus LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0035.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Wizard Core LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0038.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Water color LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0039.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Ink Drawing LoRA"></td>
                 </tr>
                 <tr>
-                    <td class="gallery"><a href="https://civitai.com/models/189179?modelVersionId=212479">SDVN8 Art XL</a></td><td class="gallery"><img class="gallery" src="images/generated/grid-0050.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Aether Punk LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0052.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Magic LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0053.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Mechanicus LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0055.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Wizard Core LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0058.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Water color LoRA"></td>
-                    <td class="gallery"><img class="gallery" src="images/generated/grid-0059.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Ink Drawing LoRA"></td>
+                    <td class="gallery"><a href="https://civitai.com/models/189179?modelVersionId=212479">SDVN8 Art XL</a></td><td class="gallery"><img class="gallery" src="images/ship_ex/grid-0050.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Aether Punk LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0052.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Magic LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0053.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Mechanicus LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0055.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Wizard Core LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0058.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Water color LoRA"></td>
+                    <td class="gallery"><img class="gallery" src="images/ship_ex/grid-0059.webp" alt="Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet with Ink Drawing LoRA"></td>
                 </tr>
             </table>
             <p>If you want to see a grid of all the generated images <a href="images/compressed_xyz_grid-0000-1866103036.png">click here</a>.</p>
@@ -247,12 +430,12 @@
 </main>
     <footer>
         <p style="text-align: center;">Designed by <a href = "../WebGopher.com">Web Gopher Co.</a> &copy;2024</p>
-        <p class="centerText" style="font-size:medium;">No code on this page was generated with AI</p>
+        <p class="centerText">No code on this page was generated with AI</p>
         <div class="centerText">
             <button type="button" class="validator" onclick="validationLink(0)">HTML Validation</button>
             <button type="button" class="validator" onclick="validationLink(1)">CSS Validation</button>
             <button type="button" class="validator" onclick="validationLink(2)">Accessibility Validation</button>
-            <button type="button" class="validator" onclick="viewChange(5)">Page Test</button>
+            <button type="button" class="validator" onclick="viewChange(6)">Page Test</button>
         </div>
     </footer>
     <script>
@@ -262,8 +445,8 @@
             function viewChange(active){
             let nodes = document.querySelectorAll(".content");
             let buttons = document.querySelectorAll(".select");
-            for(let i = 0; i < 5; i++){
-                if(i == active || active == 5){
+            for(let i = 0; i < 6; i++){
+                if(i == active || active == 6){
                     nodes[i].style.display = "block";
                     buttons[i].style.backgroundColor = "#d03711";
                     buttons[i].style.color = "#ffffff"
@@ -290,10 +473,6 @@
                     break;
             }
         }
-        /*document.getElementById("validation_link_html").setAttribute("href","https://validator.w3.org/check?uri=" + location.href);
-                document.getElementById("validation_link_css").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
-                document.getElementById("validation_accessibility").setAttribute("href", "https://wave.webaim.org/report#/" + location.href);
-                */
     </script>
 </body>
 </html>
