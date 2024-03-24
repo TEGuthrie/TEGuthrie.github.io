@@ -95,6 +95,12 @@
         color:#9B1D20;
         font-weight: bolder;
     }
+    span.prompt{
+        font-weight: 550;
+    }
+    .ital{
+        font-style: italic;
+    }
     table.gallery, td.gallery, th.gallery{
         border: solid 2px;
         border-color: #c893a4;
@@ -205,7 +211,7 @@
                     <td>Free</td>
                 </tr>
             </table>
-            <p><span class="emphasis">Prompt:</span> Man, wearing sci-fi power armor, brandishing a plasma sword, action shot</p>
+            <p><span class="emphasis">Prompt:</span> <span class="prompt">Man, wearing sci-fi power armor, brandishing a plasma sword, action shot</span></p>
             <div class="row">
                 <div class="gcol">
                     <figure>
@@ -256,13 +262,13 @@
             <h2>Automatic1111 Prompt Extensions</h2>
             <p>The Web UI that I primarily use is Automatic1111, many users have made extensions that can be added to extend functionality. Below I'll talk about some of the different extensions that I use.</p>
             <p>Some of my most used extensions are for prompting, specifically tag complete and dynamic prompts. Tag complete allows you to auto complete terms and change them out with tags from danbooru, a training datasets caption agregator, that allows for more consistent image generation. Dynamic prompts is a more extensive tool than the built in scripts allowing for more randomized generations or iterations over various terms from lists called wildcards. The specific dynamic prompt extension can also use chatgpt like large language models to improve uppon your own prompt to generate more interesting or detailed images</p>
-            <figure>
+            <figure style="width: 1500px;">
                 <img class="extensions" src="images/firefox_IAtz2xxxA8.png" alt="Automatic1111 UI showing the use of Dynamic Prompts to generate images with text from a wildcard">
                 <figcaption>How to use Dynamic Prompts to generate images using wildcards</figcaption>
             </figure>
             <br class="segment">
-            <p><span class="emphasis">Prompt:</span> 1girl, tall , vibrant __1000+/wildcards/colours__ dress, light smile, round glasses, sprite, white  background</p>
-            <p><span class="negative">Negative Prompt:</span> &lt;lora:badhands:1.2&gt;</p>
+            <p><span class="emphasis">Prompt:</span> <span class="prompt"> tall , vibrant __1000+/wildcards/colours__ dress, light smile, round glasses, sprite, white  background</span></p>
+            <p><span class="negative">Negative Prompt:</span><span class="prompt"> &lt;lora:badhands:1.2&gt;</span></p>
             <p>The section between underscores in the prompt is replaced with a line from the wildcard file that is specified.</p>
             <div class="row">
                 <div class="pcol">
@@ -354,7 +360,7 @@
                 <div class="gcol">
                     <figure>
                         <img src="images/generation_ext/00027-3993681966.png" alt="An anime style girl with black hair underdyed teal, wearing a black dress, holding a glass with green drink and green straw" class="extensions">
-                        <figcaption><span class="emphasis">Prompt:</span> 1girl, tall , vibrant black dress, light smile, round glasses, sprite, white  background<br><span class="negative">Negative Prompt:</span> &lt;lora:badhands:1.2&gt; </figcaption>
+                        <figcaption><span class="emphasis">Prompt:</span> <span class="prompt">1girl, tall , vibrant black dress, light smile, round glasses, sprite, white  background</span><br><span class="negative">Negative Prompt:</span><span class="prompt"> &lt;lora:badhands:1.2&gt;</span></figcaption>
                     </figure>
                 </div>
                 <div class="gcol">
@@ -368,7 +374,7 @@
         <div class="content" id="ex">
             <h2>Example Images</h2>
             <p>These are some examples of different models with several LoRA models applied to them.</p>
-            <p><span class="emphasis">Prompt:</span> Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet</p>
+            <p><span class="emphasis">Prompt:</span><span class="prompt"> Futuristic, metallic, long, ultra-modern, spaceship, orbiting a desert planet</span></p>
             <table class="gallery">
                 <tr>
                     <th class="gallery">Model/LoRA</th>
