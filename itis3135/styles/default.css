@@ -275,6 +275,12 @@ button.calc:active{
     background-color: maroon;
     border-style: inset;
 }
+div.drawing{
+    text-align: center;
+}
+canvas{
+    border: solid 3px maroon;
+}
 /* MOBILE RULES */
 /* Remove Initial */
 /* Foundational Three */
