@@ -121,10 +121,10 @@ ul{
 }
 body.head_foot{
     text-align: center;
-    border-width: 0px;
+    border-width: 0;
     border: none;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 .center_container{
     text-align: center;
@@ -226,8 +226,8 @@ button.calc{
         grid-column: 1/ span 3;
         grid-row: 6;
         width: 93.5%;
-        padding-top: 0%;
-        padding-bottom: 0%;
+        padding-top: 0;
+        padding-bottom: 0;
     }
     &.b-plus{
         grid-column: 4;
