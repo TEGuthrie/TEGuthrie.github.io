@@ -1,23 +1,9 @@
-@property --crayola-red{
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #FF8811;
-}
-@property --red-hover{
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #A35200;
-}
-@property --crayola-light{
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #f15574;
-}
-@property --pistachio{
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #65892F;
-}
+ :root{
+    --crayola-red: #FF8811;
+    --red-hover: #A35200;
+    --crayola-light: #f15574;
+    --pistachio: #65892F;
+ }
 
 html, body{
     all: initial;
@@ -74,6 +60,9 @@ nav.footer{
 div.center{
     margin: 0 auto;
     text-align: center;
+}
+div.pad_center{
+    margin-left: 20%;
 }
 p.center{
     text-align: center;
