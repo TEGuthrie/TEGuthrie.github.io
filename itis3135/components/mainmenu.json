@@ -1,0 +1,13 @@
+{
+    "links":
+    {
+        "home":"./",
+        "introduction":"introduction.html",
+        "contract":"contract.html",
+        "tables":"tables.html",
+        "first scripts":"firstscripts.html",
+        "Calculator":"calculator-try.html",
+        "Arrays":"arrays.html",
+        "Drawing":"drawing.html"
+    }
+}

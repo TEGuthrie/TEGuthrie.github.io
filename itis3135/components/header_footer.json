@@ -1,0 +1,23 @@
+{
+    "mainnav":{
+        "home":"./",
+        "introduction":"introduction.html",
+        "contract":"contract.html",
+        "tables":"tables.html",
+        "first scripts":"firstscripts.html",
+        "Calculator":"calculator-try.html",
+        "Arrays":"arrays.html",
+        "Drawing":"drawing.html"
+    },
+    "secondarynav":{
+        "Hobby Page":"hobby/"
+    },
+    "footernav":{
+        "Charlote.edu":"https://webpages.charlotte.edu/tguthri2/",
+        "GitHub":"https://github.com/TEGuthrie",
+        "GitHub.io":"https://teguthrie.github.io/",
+        "freeCodeCamp":"https://www.freecodecamp.org/TEGuthrie",
+        "Codecademy":"https://www.codecademy.com/profiles/TEGuthrie",
+        "LinkedIn":"https://www.linkedin.com/in/thomas-guthrie-1949ba192/"
+    }
+}

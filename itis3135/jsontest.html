@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.getJSON("/components/mainmenu.json", function(data){
+                let nav = $("<nav>");
+                $.each(data.mainnav, function(key, value){
+                    let a = $("<a>");
+                    a.attr("href", value);
+                    a.text(key);
+                    nav.append(a);
+                    nav.append(" * ");
+                })
+                $("body").append(nav);
+                /*let nav2 = $("<nav>");
+                $.each(data.secondarynav, function(key, value){
+                    let a = $("<a>");
+                    a.attr("href", value);
+                    a.text(key);
+                    nav2.append(a);
+                    nav2.append(" * ");
+                })
+                $("body").append(nav2);
+                let nav3 = $("<nav>");
+                $.each(data.footernav, function(key, value){
+                    let a = $("<a>");
+                    a.attr("href", value);
+                    a.text(key);
+                    nav3.append(a);
+                    nav3.append(" * ");
+                })
+                $("body").append(nav3);
+                */
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>This is working</p>
+</body>
+</html>
