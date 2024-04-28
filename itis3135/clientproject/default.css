@@ -36,6 +36,13 @@ img.logo{
     border-radius: 5%;
     
 }
+.video_container{
+    display: flex;
+}
+video{
+    width: 500px;
+    margin: 2px
+}
 .titillium-web-regular {
     font-family: "Titillium Web", sans-serif;
     font-weight: 400;
