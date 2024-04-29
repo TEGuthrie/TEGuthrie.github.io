@@ -1,8 +1,13 @@
 :root{
     --rosy_brown: #BA8F95;
+    /*
+    keeping stuff for js here.
+    --theater_back: #090b0c;
+    --theater_text: #b7c3cd;
+    */
 }
 
-html, body{
+body{
     all: initial;
     font-size: 18pt;
     font-family: "Figtree", Verdana, Geneva, Tahoma, sans-serif;
@@ -36,12 +41,30 @@ img.logo{
     border-radius: 5%;
     
 }
+button{
+    background-color: var(--rosy_brown);
+    border-radius: 5px;
+}
 .video_container{
     display: flex;
 }
 video{
     width: 500px;
-    margin: 2px
+    margin: 2px;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+}
+.subgallery{
+    display: flex;
+    flex-wrap: wrap;
+}
+.imgGallery{
+    width: 200px;
+    height: fit-content;
+    border-radius: 5%;
+    margin: 5px;
 }
 .titillium-web-regular {
     font-family: "Titillium Web", sans-serif;
