@@ -19,6 +19,9 @@
         span.fake:hover{
             cursor: pointer;
         }
+        span.funky:hover{
+            cursor:grab;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +33,7 @@
         <p style="text-align: right;">Wow wat a lovely <span class="fake" id="shitty" style="text-decoration: underline; color: blue;">page</span> so cool</p>
     </div>
     <div style="margin-left: 30%; margin-right: 30%;">
-        <h1 style="text-align: center;"><span style="background-color: #0d0d0d;">Heres some more text to read<br></span><span style="text-decoration: underline; font-family: Papyrus;">Split across some lines</span><br><br><span style="border-top: solid brown 20px; border-left: green dotted 30px; border-right: 40px yellow inset; border-bottom: 15px magenta double; border-top-left-radius: 20%; border-bottom-right-radius: 5%;border-bottom-left-radius: 10px; border-top-right-radius: 1cm;">How Cool</span></h1>
+        <h1 style="text-align: center;"><span style="background-color: #0d0d0d;">Heres some more text to read<br></span><span id="funky" style="text-decoration: underline; font-family: Papyrus;">Split across some lines</span><br><br><span style="border-top: solid brown 20px; border-left: green dotted 30px; border-right: 40px yellow inset; border-bottom: 15px magenta double; border-top-left-radius: 20%; border-bottom-right-radius: 5%;border-bottom-left-radius: 10px; border-top-right-radius: 1cm;">How Cool</span></h1>
     </div>
     <div id="list" style="margin-left: 70%; text-align: center;">
         <ul style="text-align: center;">
@@ -40,7 +43,7 @@
         </ul>
     </div>
     <br>
-    
+
     <script>
         window.onload = function(){
             document.getElementById("shitty").onclick = function(){window.location.reload()}
