@@ -10,7 +10,54 @@
 <body>
     <div data-include="components/header.html"></div>
     <main>
-        
+        <form action="">
+            <span class="form"><label for="name">Name:</label>
+            <input id="name" type="text" placeholder="Name"><br></span>
+            <span class="form"><label for="phone">Phone Number:</label>
+            <input id="phone" type="tel" placeholder="phone number"><br></span>
+            <span class="form"><label for="email">Email:</label>
+            <input id="email" type="email" placeholder="name@example.com"><br></span>
+            <span class="form">
+
+            </span>
+            <span class="form">
+                <label for="contacts">Contact Methods:</label>
+                <span class="sub-form" id="contacts">
+                    <label for="email" class="form-sublabel" style="padding-right: 6px;">Email</label>
+                    <input id="email" type="checkbox" value="Email"><br>
+                    <label for="phone" class="form-sublabel">Phone</label>
+                    <input id="phone" type="checkbox" value="Phone">
+                </span>
+            </span>
+            <span class="form">
+                <label for="rec">Would you reccomend WebGopher?</label>
+                <span class="subform" id="rec">
+                    <label for="yes" class="form-sublabel">Yes</label>
+                    <input type="radio" id="yes">
+                    <label for="no" class="form-sublabel">No</label>
+                    <input type="radio" id="no">
+                    <label for="no" class="form-sublabel">Maybe</label>
+                    <input type="radio" id="maybe">
+                </span>
+            </span>
+            <span class="form">
+                <label for="discover">How did you find us?</label>
+                <select name="discovered" id="discover">
+                    <option value="">Advertising</option>
+                    <option value="">Convention</option>
+                    <option value="">Online</option>
+                    <option value="">Word of mouth</option>
+                </select>
+            </span>
+            <span class="form">
+                <input type="reset"></input>
+            </span>
+            <span class="form">
+                <input type="submit"></input>
+            </span>
+            
+            
+        </form>
     </main>
 
     <div data-include="components/footer.html"></div>

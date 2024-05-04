@@ -118,7 +118,24 @@ table.complex tr:nth-child(even){
 td.num{
     text-align: center;
 }
-table.complex 
+form{
+    display: table;
+}
+span.form{
+    display: table-row;
+}
+label{
+    display: table-cell;
+}
+label.form-sublabel{
+    color: #29a39f;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+input{
+    display: table-cell;
+    margin-left: 5px;
+}
 ul{
     display: inline-block;
     text-align: left;
