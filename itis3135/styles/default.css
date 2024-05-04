@@ -67,6 +67,9 @@ div.pad_center{
 p.center{
     text-align: center;
 }
+h3.center{
+    text-align: center;
+}
 .italic-text{
     font-style: italic;
 }
@@ -92,7 +95,7 @@ span.email{
     color: var(--crayola-red);
 }
 ol.tabular{
-    margin-left: 25%;
+    margin-left: 20%;
     margin-right: 25%;
     text-align: justify;
 }
@@ -108,6 +111,9 @@ table tr, td, th{
 table.simple{
     margin-left: 20%;
     margin-right: 20%;
+}
+table.complex tr:nth-child(even){
+    background-color: #4343ff;
 }
 td.num{
     text-align: center;
