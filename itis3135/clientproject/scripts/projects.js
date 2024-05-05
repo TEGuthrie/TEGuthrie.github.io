@@ -5,10 +5,6 @@ window.onload = function(){
     document.querySelector('.popout span').addEventListener('click', function(){
         document.getElementById('popout').style.display = "none";
     });
-    /*document.querySelectorAll('.imgGallery').forEach((image) =>{
-        image.addEventListener('click', popImage(image.getAttribute('src')));
-    });
-    */
 }
 window.onclick = e => {
     console.log(e.target.className);
@@ -36,7 +32,6 @@ function popImage(image){
     document.getElementById('pop-image').setAttribute('src', image);
 
 }
-
 function getDiv(){
     return document.getElementById('images')
 }

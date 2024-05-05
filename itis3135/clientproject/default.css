@@ -24,6 +24,10 @@ header{
 main{
     background-color: var(--air-force);
     border-top: solid 3px #567863;
+    border-bottom: solid 3px #567863;
+}
+div.footer{
+    padding-top: 10px;
 }
 .main-container{
     margin-left: 5%;
@@ -94,6 +98,7 @@ video{
 }
 .pop-image{
     width: 50px;
+    max-width: 700px;
     height: auto;
     max-height: 600px;
     object-fit: contain;
@@ -108,6 +113,10 @@ video{
     align-self:flex-start;
     cursor: pointer;
     display: block;
+}
+.footer{
+    text-align: center;
+    font-size: 12pt;
 }
 .titillium-web-regular {
     font-family: "Titillium Web", sans-serif;
