@@ -15,7 +15,7 @@ window.onclick = e => {
     if (e.target.className === 'imgGallery'){
         popImage(e.target.src);
     }
-    else if(document.getElementById('popout').style.display === 'block' && e.target.id != 'pop-image'){
+    else if(document.getElementById('popout').style.display === 'flex' && e.target.id != 'pop-image'){
         document.getElementById('popout').style.display = "none";
     }
 }
@@ -32,7 +32,7 @@ function loadImages(val){
 }
 function popImage(image){
     console.log('Image clicked');
-    document.getElementById('popout').style.display = "block";
+    document.getElementById('popout').style.display = "flex";
     document.getElementById('pop-image').setAttribute('src', image);
 
 }
