@@ -1,9 +1,13 @@
 :root{
     --rosy_brown: #BA8F95;
+    --air-force: #6A8D92;
+    --gunmetal: #2C363F;
+
     /*
     keeping stuff for js here.
     --theater_back: #090b0c;
     --theater_text: #b7c3cd;
+    4d676a
     */
 }
 
@@ -11,14 +15,17 @@ body{
     all: initial;
     font-size: 18pt;
     font-family: "Figtree", Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #6A8D92;
+    background-color: #4d676a;
     color: #2C363F;
 }
 header{
     text-align: center;
-    border-bottom: solid 3px #567863;
 }
 main{
+    background-color: var(--air-force);
+    border-top: solid 3px #567863;
+}
+.main-container{
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -62,9 +69,43 @@ video{
 }
 .imgGallery{
     width: 200px;
-    height: fit-content;
+    height: 200px;
+    object-fit: cover;
     border-radius: 5%;
     margin: 5px;
+    border: 2px solid var(--air-force);
+}
+.imgGallery:hover{
+    border-radius: 7%;
+    border: 2px solid var(--gunmetal); 
+}
+.popout{
+    margin: auto;
+    background-color: #2C363FDD;
+    width: 100vw;
+    height: 100%;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+.pop-image{
+    margin: auto;
+    width: 50px;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+}
+.popout span{
+    align-self:flex-start;
+    color: #D0FFD6;
+    display: block;
+}
+.popout span:hover{
+    align-self:flex-start;
+    cursor: pointer;
+    display: block;
 }
 .titillium-web-regular {
     font-family: "Titillium Web", sans-serif;
