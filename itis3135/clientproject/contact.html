@@ -4,7 +4,7 @@
     <script src="https://farawayforests.com/cdn/accumulus/accumulus.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sapphire Creative Works - About</title>
+    <title>Sapphire Creative Works - Requests</title>
     <link rel="icon" type="images/png" href="content/images/icon.JPG">
     <link rel="stylesheet" href="default.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,9 +14,19 @@
 <body>
     <div data-include="components/header.html"></div>
     <main>
-        <h2 class="titillium-web-regular">About our company</h2>
-        <p>A veteran-owned custom laser engraving shop</p>
-        <p></p>
+        <div class="main-container">
+            <h2 class="titillium-web-regular">Custom Engraving Requests</h2>
+            <form>
+                <label for="Name">Name: <input id="Name" placeholder="John Doe" required></label>
+                
+                <label for="email">Email: <input id="email" type="email" placeholder="example@example.com" required></label>
+                
+                <label for="subject">Subject: <input id="subject" type="text" placeholder="What are you contacting us about?"></label>
+                
+                <label for="message">Message:</label>
+                <textarea cols="70" rows="10" id="message" required placeholder="Enter your message here."></textarea>
+            </form>
+        </div>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/HTMLInclude.js"></script>

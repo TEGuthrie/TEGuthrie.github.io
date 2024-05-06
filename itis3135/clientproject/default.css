@@ -56,12 +56,14 @@ button{
     background-color: var(--rosy_brown);
     border-radius: 5px;
 }
-.video_container{
+.videos_container{
     display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
 }
 video{
     width: 500px;
-    margin: 2px;
+    margin: 10px;
 }
 .gallery{
     display: flex;
@@ -87,12 +89,12 @@ video{
 .popout{
     margin: auto;
     background-color: #2C363FDD;
-    width: 100vw;
-    height: 100%;
+    width: 98%;
+    height: 98%;
     z-index: 10;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 1%;
+    left: 1%;
     display: none;
     justify-content: center;
 }
@@ -101,7 +103,7 @@ video{
     max-width: 700px;
     height: auto;
     max-height: 600px;
-    object-fit: contain;
+    object-fit:fill;
     display: block;
 }
 .popout span{
@@ -112,6 +114,16 @@ video{
 .popout span:hover{
     align-self:flex-start;
     cursor: pointer;
+    display: block;
+}
+ul p{
+    max-width: 80%;
+}
+form{
+    display: block;
+    margin-bottom: 5%;
+}
+label{
     display: block;
 }
 .footer{
