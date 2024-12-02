@@ -1,0 +1,74 @@
+:root{
+    --picton-blue: #00a7e1;
+    --celadon: #abebd2;
+    --rich-black: #04030f;
+    --chinese-violet: #7b506f;
+    --copper: #a8763e;
+    --lion: #C89C6A;
+}
+html, body{
+    all:initial;
+    font-family: "Oswald", sans-serif;
+    background-color: var(--copper);
+    color: var(--rich-black);
+    margin: 0 auto;
+}
+
+a{
+    color: var(--picton-blue);
+}
+a:hover{
+    color: var(--celadon);
+}
+/* Header Formatting */
+header.flex{
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid var(--lion) 4px;
+}
+div.header{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+}
+/* header image stuff if I decide to fiddle with it.
+img.header{
+    border: solid var(--rich-black) 2px;
+}*/
+h1{
+    font-family: "Texturina", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 30pt;
+    padding-left: 2%;
+}
+p.header{
+    font-size: 20pt;
+    font-weight: 500;
+}
+
+
+/* Body Formatting */
+main{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5px;
+}
+
+/* import stuff */
+.oswald-default {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 350;
+    font-style: normal;
+}
+.texturina-header {
+    font-family: "Texturina", serif;
+    font-optical-sizing: auto;
+    font-weight: 650;
+    font-style: normal;
+    font-size: 50pt;
+    padding-left: 2%;
+}
+
